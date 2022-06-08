@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <title>Javascript on Steroids</title>
+</head>
+<body>
+    <div class="container-1">
+        <h2>Challenge 1: Your Age in Days</h2>
+        <div class="flex-box-container-1">
+            <div>
+                <button class="btn btn-primary" onclick="ageInDays()">Click me</button>
+            </div>
+
+            <div>
+                <button class="btn btn-danger" onclick="reset()">reset</button>
+            </div>
+        </div>
+
+        <div class="flex-box-container-1">
+            <div id="flex-box-result"></div>
+        </div>
+    </div>
+
+    <div class="container-2">
+        <h2>Challenge 2: Cat Generator</h2>
+        <button class="btn btn-success" id="cat-generator" onclick="generateCat()">Generate Cat</button>
+
+        <div class="flex-box-container-2" id="flex-cat-gen">
+        </div>
+    </div>
+
+    <div class="container-3">
+        <h2>Challenge 3: Rock, Paper, Scissors</h2>
+        <div class="flex-box-rps" id="flex-box-rps-div">
+            <img id="rock" src="http://images.clipartpanda.com/rock-clipart-clipart-harvestable-resources-rock.png" height=150 width=150 alt="" onclick="rpsGame(this)">
+            <img id="paper" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAZlBMVEX///8AAADDw8OysrJHR0eGhobZ2dmjo6N/f3/c3NxMTEy4uLjLy8vHx8fCwsLp6ekrKyvz8/NRUVHT09Pi4uIeHh6ZmZlycnK8vLwZGRmsrKwKCgqhoaEWFhYuLi6SkpJlZWVdXV2wlrZMAAACZklEQVR4nO3a627TQBRF4YmbJpRcIGkCodzf/yUBtfVYggTTPfscE6313z7zaeRIE7sUIiIiIiIiIiIiIvr31t3GU7fZZdt+tZg5u8nm/cwKnAJxYxbmE7duYTqxswuziQHC2WoKwvfL1j3sJ0LsbGt4NdjFU/vbj66zPStDYSYxSJhIjBLOtu0njCtMOOvajxiVXbjMJtqFh/ueuGk/ZER24V2pxHX7KX8vQFjWqcQIYS4xRJhKjBEOjqH37SddLkiYSIwSDo7awcQw4eAkGkuMEw52cdF+2vkCheWUQowU5hBDhWXVE+/OXda8WGEGMVhYbsKJ0cJK/HBoP/NPhQvLQ7+LMcR44YD4pv3U30sQVuIxYhczhKX/7+YYsIspwkr86CfmCMun/hfVTkwSVuJbNzFLWN71RPPnDGnCSvzsJeYJK/GLlZgoLF9DiJnCSnQ+i3bh/PX56otwIzHu7drl5u0X8NRUhL6vGSYjvG2/gsd8wuVl0RUId8drF5bdt2sXjuxw9cIFQjGE/hCqIfSHUA2hP4RqCP0hVEPoD6EaQn8I1RD6Q6iG0B9CNYT+EKoh9IdQDaE/hGoI/SFUQ+gPoRpCfwjVEPpDqIbQH0I1hP4QqiH0h1ANoT+Eagj9IVRD6A+hGkJ/CNUQ+kOohtAfQjWE/hCqIfSHUA2hP4RqCP0hVEPoD6EaQn8I1RD6Q6iG0B9CNYT+EKoh9IdQDaE/hGoI/SFUQ+gPoRpCfwjVEPpDqPYkzA/hi9tmy55D+OIO2bLnTi5huc2mPba3AUtZfZ+nt18agURERERERERERET0P/cDchIqdyB4nYIAAAAASUVORK5CYII=" height=150 width=150 alt="" onclick="rpsGame(this)">
+            <img id="scissors" src="https://www.pngitem.com/pimgs/m/168-1682832_cut-clipart-scissors-icon-scissors-icon-png-transparent.png" height=150 width=150 alt="" onclick="rpsGame(this)">
+        </div>
+    </div>
+    
+    <div class="container-4">
+        <h2 id="change my color">Challenge 4: Change the Color of all Buttons!</h2>
+        <div class="flex-box-pick-color">
+            <form action="">
+                <select name="backdrop" id="background" onchange="buttonColorChange(this)">
+                    <option value="random">Random</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="reset">Reset</option>
+                </select>
+            </form>
+
+            <button class="btn btn-primary">Wee!</button>
+            <button class="btn btn-danger">Youtube!</button>
+            <button class="btn btn-warning">Google!</button>
+            <button class="btn btn-success">Facebook</button>
+        </div>
+    </div>
+
+    <div class="container-5">
+        <h2>Challenge 5: Blackjack</h2>
+        <h3><span id="blackjack-result">Let's play!</span></h3>
+
+        <div class="flex-blackjack-row-1">
+            <div id="your-box">
+                <h2>You : <span id="your-blackjack-result">0</span></h2>
+            </div>
+
+            <div id="dealer-box">
+                <h2>Dealer : <span id="dealer-blackjack-result">0</span></h2>
+            </div>
+        </div>
+
+        <div class="flex-blackjack-row-2">
+            <div>
+                <button class="btn-lg btn-primary mr-2" id="blackjack-hit-button">Hit</button>
+                <button class="btn-lg btn-warning mr-2" id="blackjack-stand-button">Stand</button>
+                <button class="btn-lg btn-danger mr-2" id="blackjack-deal-button">Deal</button>
+            </div>
+        </div>
+
+        <div class="flex-blackjack-row-3">
+            <table>
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+
+                <tr>
+                    <td><span id="wins">0</span></td>
+                    <td><span id="losses">0</span></td>
+                    <td><span id="draws">0</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container-6">
+        <h2>Challenge 6: Dog Generator</h2>
+        <button class="btn btn-success" id="dog-generator" onclick="generateDog()">Generate Dog</button>
+        <div class="flex-box-container-6" id="flex-dog-gen">
+        </div>
+    </div>
+
+    <div class="container-7">
+        <h2>Challenge 7: Height Calculator</h2>
+        <div class="flex-box-container-7">
+            <div>
+                <button class="btn btn-primary" onclick="feettometer()">FeetToMeter</button>
+            </div>
+
+            <div>
+                <button class="btn btn-warning" onclick="metertofeet()">MeterToFeet</button>
+            </div>
+
+            <div>
+                <button class="btn btn-danger" onclick="reset_2()">reset</button>
+            </div>
+        </div>
+
+        <div class="flex-box-container-7">
+            <div id="flex-box-result-2"></div>
+        </div>
+    </div>
+        
+    
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
